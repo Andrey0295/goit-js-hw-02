@@ -1,37 +1,50 @@
-const orderPieces = null;
-
-const credits = 23580;
-const pricePerDroid = 3000;
-const CANCELED_BY_USER = 'Отменено пользователем!';
-const ACCESS_DENIED = 'Недостаточно средств на счету!';
-
-let totalPrice = pricePerDroid * orderPieces; // Write code on this line
-let balanceCredit = credits - totalPrice; // Write code on this line
-let message;
-
-// Write code under this line
-// 1. Если цена заказа меньше или равна credits, то покупка пройдет успешно.
-// 2. Если кол-вщ заказанных дроидов(orderPieces) равно нул, это означает, что отмененно пользователем.
-// 3.Если при умножении orderPieces и pricePerDroid значение больше,чем credits, недостаточно средств на счету.
-if (totalPrice <= credits) {
-  message = `Вы купили ${orderPieces} дроидов, на счету осталось ${balanceCredit} кредитов`;
-} else {
-  message = ACCESS_DENIED;
+function formatString(string, maxLength = 40) {
+  string = string.split('');
+  if (string.length > maxLength) {
+    for (let i = 0; i < string.length; i += 1) {
+      if (i === maxLength) {
+        string[i] = '...';
+      } else if (i > maxLength) {
+        string[i] = '';
+      }
+    }
+  }
+  return string.join('');
 }
-if (orderPieces === null) {
-  message = CANCELED_BY_USER;
-}
+// 1.Вывести сумму символов в строке
+// 2.Научиться оставлять нужное количество символов.
+//    2.1 Использовать значение для метода length.
+// 3.Попробовать if(Если str > чем maxLength, то string нужно обрезать)
 
-console.log(message);
+// 4.Добавить "..." с помощью шаблонной строки
 
-//если orderPieces равно 4
-// то значение message будет равно
-// 'Вы купили 4 дроидов, на счету осталось 11580 кредитов'
+// let string = 'Hello world';
+// let str = string.split('');
+// console.log(str.length);
 
-//если orderPieces равно null
-// то значение message будет равно
-// 'Отменено пользователем!'
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// 'Curabitur ligula sapien, tincidunt non.'
 
-//если orderPieces равно 10
-// то значение message будет равно
-// 'Недостаточно средств на счету!'
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// 'Vestibulum facilisis, purus nec pulvinar...'
+
+console.log(
+  formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30),
+);
+// 'Vestibulum facilisis, purus ne...'
+
+// Форматирование строки в зависимости от длинны строки
+// Напиши функцию formatString(string, maxLength = 40)
+// которая принимает строку и форматирует ее если необходимо.
+
+// Если длина строки не превышает maxLength,
+//   функция возвращает ее в исходном виде.
+// Если длина больше maxLength,
+//   то функция обрезает строку до размера maxLength
+// символов и добавляет в конец строки троеточие ...,
+// после чего возвращает укороченную версию.
+
+// const string = 'Hello my dear friend';
+// let str = string.split(' ').join('').length;
+
+// console.log(str);
