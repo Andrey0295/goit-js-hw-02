@@ -1,3 +1,9 @@
+// 1.Разбить строку на массив безпробела.
+// 2.Создать if с условием(длина массива строки больше, сем мак.длина).
+// 3.Создать фор., в котором при строгом равенстве i и макс.длины последним символом становится ...).
+// 4.В случае если
+// 5. Просим функцию вернуть строку join .
+
 function formatString(string, maxLength = 40) {
   string = string.split('');
   if (string.length > maxLength) {
@@ -11,16 +17,6 @@ function formatString(string, maxLength = 40) {
   }
   return string.join('');
 }
-// 1.Вывести сумму символов в строке
-// 2.Научиться оставлять нужное количество символов.
-//    2.1 Использовать значение для метода length.
-// 3.Попробовать if(Если str > чем maxLength, то string нужно обрезать)
-
-// 4.Добавить "..." с помощью шаблонной строки
-
-// let string = 'Hello world';
-// let str = string.split('');
-// console.log(str.length);
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // 'Curabitur ligula sapien, tincidunt non.'
@@ -43,8 +39,3 @@ console.log(
 //   то функция обрезает строку до размера maxLength
 // символов и добавляет в конец строки троеточие ...,
 // после чего возвращает укороченную версию.
-
-// const string = 'Hello my dear friend';
-// let str = string.split(' ').join('').length;
-
-// console.log(str);
